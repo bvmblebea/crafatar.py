@@ -22,31 +22,31 @@ class Crafatar:
         return True
 
     def get_player_avatar(self, size: int = 100):
-        response = requests.get(
+        response = get(
             f"{self.api}/avatars/{self.player_uuid}", headers=self.headers
         ).content
         return self.save_file(content=response)
 
     def get_player_head(self):
-        response = requests.get(
+        response = get(
             f"{self.api}/renders/head/{self.player_uuid}", headers=self.headers
         ).content
         return self.save_file(content=response)
 
     def get_player_body(self):
-        response = requests.get(
+        response = get(
             f"{self.api}/renders/body/{self.player_uuid}", headers=self.headers
         ).content
         return self.save_file(content=response)
 
     def get_player_skin(self):
-        response = requests.get(
+        response = get(
             f"{self.api}/skins/{self.player_uuid}", headers=self.headers
         ).content
         return self.save_file(content=response)
 
     def get_player_cape(self):
-        response = requests.get(
+        response = get(
             f"{self.api}/capes/{self.player_uuid}", headers=self.headers
         ).content
         return self.save_file(content=response)
